@@ -1,0 +1,3 @@
+"use client";
+import Link from "next/link";
+export default function Signup(){return <section className="auth"><p className="eyebrow">LIVEONES</p><h1>Create account</h1><p className="muted">Build your trader profile and consistency record.</p><div className="panel form"><label>Name<input placeholder="Trader name"/></label><label>Email<input type="email" placeholder="you@example.com"/></label><label>Password<input type="password" placeholder="••••••••"/></label><Link className="btn" href="/dashboard">Create Account</Link><Link className="btn secondary" href="/login">Already have an account?</Link></div></section>}

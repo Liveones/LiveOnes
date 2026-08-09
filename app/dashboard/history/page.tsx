@@ -1,0 +1,4 @@
+"use client";
+import {useEffect,useState} from "react";
+import {getTrades,type Trade,deleteTrade} from "@/lib/store";
+export default function History(){const[t,setT]=useState<Trade[]>([]);const load=()=>setT(getTrades());useEffect(load,[]);return <section><p className="eyebrow">HISTORY</p><h1>Trade History</h1><div className="panel tablewrap"><table className="table"><thead><tr><th>Date</th><th>Symbol</th><th>Side</th><th>Result</th><th>P&L</th><th></th></tr></thead><tbody>{t.map(x=><tr key={x.id}><td>{new Date(x.date).toLocaleString()}</td><td>{x.symbol||"—"}</td><td>{x.side}</td><td>{x.result}</td><td className={x.pnl>=0?"mint":"red"}>€{x.pnl.toFixed(2)}</td><td><button className="btn danger" onClick={()=>{deleteTrade(x.id);load()}}>Delete</button></td></tr>)}</tbody></table>{!t.length&&<div className="empty">No trades recorded yet.</div>}</div></section>}

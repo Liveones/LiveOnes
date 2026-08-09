@@ -1,0 +1,3 @@
+"use client";
+import {useState} from "react";
+export default function Process(){const[c,setC]=useState([false,false,false,false]);const labels=["Strategy followed","Risk checked","Setup ≥ 70%","Journal completed"];const score=Math.round(c.filter(Boolean).length/4*100);return <section><p className="eyebrow">CONSISTENCY</p><h1>Process</h1><p className="muted">Your rank is built from how consistently you follow your process.</p><div className="panel">{labels.map((x,i)=><label className="check" key={x}><span>{x}</span><input type="checkbox" checked={c[i]} onChange={e=>setC(a=>a.map((v,j)=>j===i?e.target.checked:v))}/></label>)}<div className="statline"><b>Process score</b><b className="gold">{score}%</b></div></div></section>}

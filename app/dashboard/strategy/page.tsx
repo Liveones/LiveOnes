@@ -1,0 +1,3 @@
+"use client";
+import {useState} from "react";
+export default function Strategy(){const[n,setN]=useState("My Strategy");const[d,setD]=useState("Volume + structure + trend + confirmation");const save=()=>localStorage.setItem("liveones_strategy",JSON.stringify({n,d}));return <section><p className="eyebrow">EDGE</p><h1>Strategy</h1><p className="muted">Define the rules you want to follow consistently.</p><div className="panel form"><label>Strategy name<input value={n} onChange={e=>setN(e.target.value)}/></label><label>Rules<textarea value={d} onChange={e=>setD(e.target.value)}/></label><button className="btn" onClick={save}>Save Strategy</button></div></section>}

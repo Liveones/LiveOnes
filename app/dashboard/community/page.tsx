@@ -1,0 +1,3 @@
+"use client";
+import {useState} from "react";
+export default function Community(){const[m,setM]=useState("");const[a,setA]=useState<string[]>(["Stay disciplined. Process over outcome."]);return <section><p className="eyebrow">COMMUNITY</p><h1>Community</h1><p className="muted">Share motivation and progress with other traders.</p><div className="panel form"><textarea value={m} onChange={e=>setM(e.target.value)} placeholder="Send a motivation message..."/><button className="btn" onClick={()=>{if(m.trim()){setA([m,...a]);setM("")}}}>Post Message</button></div><div className="panel">{a.map((x,i)=><div className="message" key={i}>{x}<br/><small>LiveOnes trader</small></div>)}</div></section>}

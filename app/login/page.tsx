@@ -1,0 +1,4 @@
+"use client";
+import Link from "next/link";
+import {useState} from "react";
+export default function Login(){const[email,setEmail]=useState("");return <section className="auth"><p className="eyebrow">LIVEONES</p><h1>Welcome back</h1><p className="muted">Demo login is available now. Connect Supabase to activate real accounts.</p><div className="panel form"><label>Email<input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="you@example.com"/></label><label>Password<input type="password" placeholder="••••••••"/></label><Link className="btn" href="/dashboard">Continue</Link><Link className="btn secondary" href="/signup">Create account</Link></div></section>}

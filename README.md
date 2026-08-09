@@ -1,16 +1,23 @@
-## Hi there 👋
+# LiveOnes 2.0
 
-<!--
-**Liveones/LiveOnes** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+A static-export Next.js trading journal frontend with Supabase-ready authentication and data storage.
 
-Here are some ideas to get you started:
+## Run locally
+npm install
+npm run dev
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Static build
+npm run build
+
+The static site is generated in `out/`.
+
+## Supabase
+Create these environment variables when connecting the frontend to Supabase:
+
+- NEXT_PUBLIC_SUPABASE_URL
+- NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+The app also has a local demo mode so the UI can be tested before Supabase is connected.
+
+## Included
+Home, Add Trade, P&L, Performance, Process, Calendar, History, Strategy, Community, Messages, Profile, Settings, Login and Signup.

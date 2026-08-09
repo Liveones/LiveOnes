@@ -1,0 +1,3 @@
+"use client";
+import {useState} from "react";
+export default function Messages(){const[m,setM]=useState("");const[a,setA]=useState<string[]>([]);return <section><p className="eyebrow">MESSAGES</p><h1>Messages</h1><div className="panel"><div className="message"><b>LiveOnes</b><br/><small>Your process is your advantage. Keep building.</small></div>{a.map((x,i)=><div className="message" key={i}>{x}<br/><small>You</small></div>)}<div className="row"><input value={m} onChange={e=>setM(e.target.value)} placeholder="Write a message..."/><button className="btn" onClick={()=>{if(m.trim()){setA([...a,m]);setM("")}}}>Send</button></div></div></section>}

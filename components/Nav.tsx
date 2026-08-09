@@ -1,0 +1,5 @@
+"use client";
+import Link from "next/link";
+import {usePathname} from "next/navigation";
+const items=[["/dashboard","Home"],["/dashboard/add-trade","Add Trade"],["/dashboard/pnl","P&L"],["/dashboard/performance","Performance"],["/dashboard/process","Process"],["/dashboard/calendar","Calendar"],["/dashboard/history","History"],["/dashboard/strategy","Strategy"],["/dashboard/community","Community"],["/dashboard/messages","Messages"],["/dashboard/profile","Profile"],["/dashboard/settings","Settings"]];
+export default function Nav(){const p=usePathname();return <nav className="nav"><div className="navin"><Link className="brand" href="/dashboard">LIVE<span>ONES</span></Link><div className="links">{items.map(([h,l])=><Link key={h} className={p===h?"active":""} href={h}>{l}</Link>)}</div></div></nav>}

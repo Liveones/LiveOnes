@@ -1,0 +1,1 @@
+export default function Card({title,value,sub,className=""}:{title:string;value:string;sub?:string;className?:string}){return <div className={"card "+className}><div className="cardlabel">{title}</div><div className="value">{value}</div>{sub&&<small className="muted">{sub}</small>}</div>}

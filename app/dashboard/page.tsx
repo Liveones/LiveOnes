@@ -1,0 +1,6 @@
+"use client";
+import Link from "next/link";
+import {useEffect,useState} from "react";
+import Card from "@/components/Card";
+import {getTrades,type Trade} from "@/lib/store";
+export default function Dashboard(){const[t,setT]=useState<Trade[]>([]);useEffect(()=>setT(getTrades()),[]);const pnl=t.reduce((a,x)=>a+x.pnl,0),wins=t.filter(x=>x.result==="win").length,loss=t.length-wins;return <><section className="hero"><div><p className="eyebrow">LIVEONES</p><h1>Welcome, Trader</h1><p className="muted">Today is a new day to build on mindset.</p></div><Link className="btn" href="/dashboard/add-trade">+ Add Trade</Link></section><div className="grid4"><Card title="P&L" value={`€${pnl.toFixed(2)}`} sub="All recorded trades"/><Card title="Wins" value={String(wins)}/><Card title="Losses" value={String(loss)}/><Card title="Rank" value="ROOKIE" sub="Build consistency"/></div><section className="panel"><h2>LiveOnes overview</h2><p className="muted">Track your trades, process, strategy and consistency from one place.</p><div className="actions"><Link className="btn" href="/dashboard/add-trade">Add Trade</Link><Link className="btn secondary" href="/dashboard/performance">Performance</Link><Link className="btn secondary" href="/dashboard/process">Process</Link><Link className="btn secondary" href="/dashboard/calendar">Calendar</Link></div></section></>}

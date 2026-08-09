@@ -1,0 +1,3 @@
+"use client";
+import {useState} from "react";
+export default function Settings(){const[n,setN]=useState("Trader");const[r,setR]=useState("1");return <section><p className="eyebrow">ACCOUNT</p><h1>Settings</h1><div className="panel form"><label>Trader name<input value={n} onChange={e=>setN(e.target.value)}/></label><label>Default risk<select value={r} onChange={e=>setR(e.target.value)}><option value="0.5">0.5%</option><option value="1">1%</option><option value="2">2%</option></select></label><label>Theme<select defaultValue="dark"><option value="dark">Dark</option></select></label><button className="btn" onClick={()=>{localStorage.setItem("liveones_name",n);localStorage.setItem("liveones_risk",r)}}>Save Settings</button></div></section>}
